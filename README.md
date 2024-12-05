@@ -43,9 +43,12 @@ First setup your machine or your teammate's machine to be the self hosted runner
 
 Answer the following questions:
 
-1. What does the __runs-on__ string  
+1. What does the __runs-on__ string
+The runs-on string specifies the type of runner that the job will execute on. In this case, it is set to cs5500-self-hosted, which means the job will run on a self-hosted runner tagged as cs5500-self-hosted.   
 2. In `main.yml`, on which branch do the jest tests run when a push to main branch is made?
+The jest tests run on the main branch when a push is made to the main branch. This is specified in the on: push: branches: - main section.
 3. In `main.yml`, on which branch do the jest tests run when a pull request is submitted to the deploy branch?
+The jest tests run on the deploy branch when a pull request is submitted to the deploy branch. This is specified in the on: pull_request: branches: - deploy section.
 
 Next, create a new workflow yml file that captures the following continuous integration requirement:
 
